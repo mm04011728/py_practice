@@ -1,11 +1,15 @@
+# coding:utf-8
+
+
 class snake(object):
-    def __init__(self):
+    def __init__(self, ground):
         self.head = (2, 0)
         self.body = []
         self.body.append((0, 0))
         self.body.append((1, 0))
         self.angle = 0
         self.is_dead = False
+        ground.add_snake(self)
 
     def move(self):
         pass
