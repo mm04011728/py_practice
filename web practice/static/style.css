@@ -1,0 +1,27 @@
+.top{
+    height: 100px;
+}
+.login{
+    height: 200px;
+    width: 300px;
+    margin: 0 auto;
+    background-color: #85ece7;
+    /* padding-top: 0px; */
+    border: 1px solid #000;
+}
+
+.login div{
+    margin: 20px 0;
+}
+
+.login div .title{
+    width: 200px;
+    margin: 0 auto;
+    font-size: 20pt;
+    text-align: center;
+}
+
+.login .form-submit p{
+    margin: 15px 0;
+    text-align: center
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="top"></div>
+    <div id="main">
+        <div class="login">
+            <div>
+                <p class="title">系统登陆</p>
+            </div>
+            <div class="form-submit">
+
+                <form action="/login" method="post">
+                    <p>
+                        <input type="text" name="loginid" id="loginid" placeholder="请输入用户名">
+                    </p>
+                    <p>
+                        <input type="password" name="password" id="password" placeholder="请输入密码">
+                    </p>
+                    <p>
+                        <input type="submit" value="登陆">
+                    </p>
+                    {% if message %}
+                    <p style="color:red">{{ message }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
