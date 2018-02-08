@@ -1,6 +1,7 @@
 #coding:utf-8
 
-from flask import  Flask, request, render_template
+from flask import  Flask, request, render_template,redirect, url_for
+import db
 
 app = Flask(__name__)
 
@@ -16,9 +17,17 @@ def home():
 def login():
     loginid = request.form['loginid']
     password = request.form['password']
-    if loginid=='admin' and password=='password':
-        return render_template('index.html', username=loginid)
-    return render_template('login.html', message='用户名或密码错误', username=loginid)
+    success,name = db.authenticate(loginid,password)
+    print(success,name)
+    if success:
+        return redirect(url_for('book'))
+        # return render_template('index.html', username=name)
+    return render_template('login.html', message='用户名或密码错误', loginid=loginid)
+    
+@app.route('/book',methods = ['GET'])
+def book():
+    return render_template('index.html')
 
 if __name__ == '__main__':
+    # print(db.get_all_books())
     app.run()
