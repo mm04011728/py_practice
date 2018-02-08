@@ -37,11 +37,11 @@ def get_all_books():
     conn.close()
     return books
 
-def get_book(SN):
+def get_book(ISBN):
     conn = sqlite3.connect(DBPATH)
     cursor = conn.cursor()
     cursor.execute(
-        'select SN,name,author,publishing from book where SN=?', (SN,))
+        'select ISBN,name,author,publishing,introduction from book where SN=?', (ISBN,))
     book = cursor.fetchall()
     cursor.close()
     conn.close()
