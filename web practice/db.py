@@ -50,15 +50,15 @@ def get_all_books():
     conn.close()
     return books
 
-def get_book(ISBN):
-    conn = sqlite3.connect(DBPATH)
-    cursor = conn.cursor()
-    cursor.execute(
-        'select ISBN,name,author,publishing,introduction from book where SN=?', (ISBN,))
-    book = cursor.fetchall()
-    cursor.close()
-    conn.close()
-    return book[0]
+# def get_book(ISBN):
+#     conn = sqlite3.connect(DBPATH)
+#     cursor = conn.cursor()
+#     cursor.execute(
+#         'select ISBN,name,author,publishing,introduction from book where SN=?', (ISBN,))
+#     book = cursor.fetchall()
+#     cursor.close()
+#     conn.close()
+#     return book[0]
 
 def new_user(loginID,password,name):
     salt = get_salt()

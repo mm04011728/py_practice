@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登陆</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
@@ -28,12 +29,13 @@
                     <p>
                         <input type="submit" value="登陆">
                     </p>
-                    {% if message %}
-                    <p style="color:red">{{ message }}</p>
-                    {% endif %}
+
                 </form>
             </div>
         </div>
+        {% if message %}
+        <p style="color:red;text-align:center">{{ message }}</p>
+        {% endif %}
     </div>
 </body>
 
