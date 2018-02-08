@@ -1,3 +1,7 @@
+body{
+    width: 1280px;
+    margin: 0 auto;
+}
 .top{
     height: 100px;
 }
@@ -27,31 +31,63 @@
 }
 .left{
     float: left;
-    width: 38%;
+    width: 400px;
     height: 500px;
-    border: 1px solid black;
+
 }
 .left .title{
     padding-left: 40px;
 }
-.left ul{
+.left ol{
     list-style: none;
-    padding-right: 10px;
+    padding-right: 30px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    border-top: 1px solid rgb(201, 201, 201);
+
 }
-.left ul li{
-    border: 1px solid black;
+.left ol li{
     height: 20px;
     line-height: 20px;
-
+    margin: 30px 0;
+    
 }
 .right{
     float: left;
-    width: 61%;
-    height: 500px;
-    border: 1px solid black;
+    width: 800px;
+    padding-left: 50px;
+    padding-top: 50px;
+
+}
+.right .content{
+    border-left: 1px solid rgb(201, 201, 201);
+    padding-left: 50px;
+    height: 40px;
+    line-height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.right .content .prop{
+    float: left;
+    width: 100px;
+}
+.right .content .val{
+    float: left;
+    width: 600px;
 }
 .banner{
     text-align: center;
     font-size: 30pt;
     margin-bottom: 30px;
+    margin-top: 30px;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    padding-bottom: 15px;
 }
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
