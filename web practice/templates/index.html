@@ -14,17 +14,22 @@
     <div class="banner">您好{{ user_name }},欢迎使用图书管理系统</div>
     <div>
         <div class="left">
+            <p class="title">图书列表</p>
             <ul class="list">
-                {%for ISBN,name,author,publishing,introduction in books%}
-                    <li><a href="/book/"+{{user_name}}+"?ISBN="+ISBN></a></li>
-                {%endfor%}
+                {% for ISBN,name in books %}
+                <li>
+                    <a href="{{ url_for('book', user_name=user_name,ISBN = ISBN) }}">{{name}}</a>
+                </li>
+                {% endfor %}
             </ul>
         </div>
         <div class="right">
-            <div class="content"></div>
-            <div class="content"></div>
-            <div class="content"></div>
-            <div class="content"></div>
+            {% if one_book != None %}
+            <div class="content">书名:{{one_book[1]}}</div>
+            <div class="content">作者:{{one_book[2]}}</div>
+            <div class="content">出版社:{{one_book[3]}}</div>
+            <div class="content">简介:{{one_book[4]}}</div>
+            {% endif %}
         </div>
     </div>
 

@@ -27,17 +27,31 @@
 }
 .left{
     float: left;
-    width: 20%;
-    background-color: aquamarine;
+    width: 38%;
     height: 500px;
+    border: 1px solid black;
+}
+.left .title{
+    padding-left: 40px;
+}
+.left ul{
+    list-style: none;
+    padding-right: 10px;
+}
+.left ul li{
+    border: 1px solid black;
+    height: 20px;
+    line-height: 20px;
+
 }
 .right{
     float: left;
-    width: 80%;
+    width: 61%;
     height: 500px;
+    border: 1px solid black;
 }
 .banner{
     text-align: center;
     font-size: 30pt;
-    
+    margin-bottom: 30px;
 }
